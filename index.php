@@ -14,14 +14,7 @@
   </head>
 
   <body>
-      <header><img src="Images/winonalogo.png">COMPUTER  SCIENCE</header>
-      <nav>
-          <a href="">HOME</a>
-          <a href="">PROSPECTIVE STUDENTS</a>
-          <a href="">CURRENT STUDENTS</a>
-          <a href="">FACULTY</a>
-          <a href="">RESOURCES</a>
-      </nav>
+        include("header.html");
       <main>
       
           <img src="Images/Banner.jpg" alt="Banner" class="banner">
