@@ -4,10 +4,9 @@
 		<meta charset="utf-8">
 		<title>prototype index</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="index.js" type="text/javascript"></script>
-		<script src="jquery.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="script.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="style/generatorstyle.css">
-
 	</head>
 	<header>
 		<h1 class="header">Custom Page Generator</h1>
@@ -61,5 +60,15 @@
 					</ul>
 				</form>
 			</div>
+            <div class="stylediv">
+            <form id="stylepicker">
+            <fieldset>
+                <legend>Change the Page Style</legend>
+                <label><input type="radio" name="stylebtn" value="white" id="stylebtn" checked>White</label>
+                <label><input type="radio" name="stylebtn" value="purple" id="stylebtn">Purple</label>
+                <label><input type="radio" name="stylebtn" value="blue" id="stylebtn">Blue</label>
+            </fieldset>
+            </form>
+        </div>
 		</body>
 </html>

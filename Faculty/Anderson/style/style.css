@@ -1,0 +1,29 @@
+#wrapper{
+	width: 80%;
+	margin: auto;
+	margin-top: 5%;
+	color: white;
+	text-align: center;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+body{
+	background-color: purple;
+}
+.personal_image{
+	height: 50%;
+	width: 50%;
+}
+.stylediv {
+    width: 15%;
+    right: 5%;
+}
+.editdiv {
+    width: 10%;
+    left: 5%;
+}
+.field {
+    background-color: purple;
+    position: absolute;
+    top: 5%;
+}
