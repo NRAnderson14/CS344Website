@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="js/index.js" type="text/javascript"></script>
 		<script src="js/jquery.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="style/style(1).css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px" rel="stylesheet">
 
 	</head>

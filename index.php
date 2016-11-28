@@ -7,14 +7,17 @@
     <script src="../JS/javascript.js" type="text/javascript"></script>
 -->
     
-    <link rel="stylesheet" href="Style/style.css"> 
+    <link rel="stylesheet" href="Style/styleIndex.css"> 
       
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px" rel="stylesheet">
       
   </head>
 
   <body>
-        include("header.html");
+      <?php
+        include 'header.html';
+      ?>
+      
       <main>
       
           <img src="Images/Banner.jpg" alt="Banner" class="banner">
@@ -42,8 +45,8 @@
                   </section>
                   
                   <section class="set">
-                    <a href="" class="options"><img src="Images/Faculty.png" alt="Faculty and Alumni">
-                    <h2 class="optionsheading">FACULTY & ALUMNI</h2></a>
+                    <a href="" class="options"><img src="Images/Faculty.png" alt="Faculty">
+                    <h2 class="optionsheading">FACULTY</h2></a>
                   </section>
                       
               </div>

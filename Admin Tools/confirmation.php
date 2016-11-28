@@ -60,6 +60,7 @@
 				$_bachelors = $_POST['bachelors'];
 					if($_bachelors = "on"){
 						$_bachelors = "Bachelors";
+						$degreeTitle = "";
 					}else{
 						
 					}
@@ -68,6 +69,7 @@
 				$_masters = $_POST['masters'];	
 					if($_masters = "on"){
 						$_masters = "Masters";
+						$degreeTitle = "";
 					}else{
 					}				
 				}
@@ -75,6 +77,7 @@
 				$_phd = $_POST['phd'];
 					if($_phd = "on"){
 						$_phd = "PHD";
+						$degreeTitle = "Dr. ";
 					}else{
 					}				
 				}
@@ -127,7 +130,7 @@
 							if(!empty($_files)){
 								$path = "faculty/$folder/uploads/images/";
 								if  (move_uploaded_file($tmp_name, $path.$new_name)){
-									echo 'Uploaded';
+									echo '';
 									}
 								}else{
 									echo "please try again";
@@ -144,9 +147,10 @@
 										DROP TABLE if exists `subs`;
 										create table `subs`(
 										username			varchar(255),
-										password			varchar(255));
+										password			varchar(255),
+										status				varchar(255));
 										
-										INSERT INTO `subs` (username,password) VALUES('admin','password');");
+										INSERT INTO `subs` (username,password,status) VALUES('admin','password',FALSE);");
 									*/
 									
 							
@@ -154,7 +158,7 @@
 				$_files2 = $_FILES["extrapic"]["name"];
 				$tmp_name2 = $_FILES['extrapic']['tmp_name'];
 				$file_type2 = pathinfo($_files,PATHINFO_EXTENSION);
-				$new_name2 = "$_lname".time().".jpg";
+				$new_name2 = "$_fname".time().".jpg";
 				$error2 = $_FILES['extrapic']['error'];
 					if(isset($_files2)){
 						$check2 = getimagesize($_FILES['extrapic']['tmp_name']);
@@ -162,7 +166,7 @@
 							if(!empty($_files2)){
 							$path2 = "faculty/$folder/uploads/images/";
 								if  (move_uploaded_file($tmp_name2, $path2.$new_name2)){
-									echo 'Uploaded2'; 
+									echo ''; 
 									}
 								}else{
 									echo "please try again";
@@ -202,6 +206,7 @@
 									//fwrite($adminFile,"PASSWORD: password".PHP_EOL);
 				$file = fopen("faculty/$folder/$_lname.php", "w");
 				$file2 = fopen("faculty/$folder/style/style.css", "w");
+				$file3 = fopen("faculty/$folder/header.html","w");
 				fwrite($file,
 "<!DOCTYPE html>
 	<html lang='en'>
@@ -212,53 +217,606 @@
 			<script src='index.js' type='text/javascript'></script>
 			<script src='jquery.js' type='text/javascript'></script>
 			<link rel='stylesheet' href='style/style.css'>
+			<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px' rel='stylesheet'>
 		</head>
 			<body>
-			<div id='wrapper'>
-			<h1>STYLE SHEET IN PROGRESS...</h1>
-				<img class='personal_image' src='uploads/images/$new_name'>
-				<img class='personal_image' src='uploads/images/$new_name2'>
-				<p><strong>First name</strong>: $_fname</p>
-				<p><strong>Last name</strong>: $_lname</p>
-				<p><strong>Email</strong>: $_email</p>
-				<p><strong>School</strong>: $_schooling</p>
-				<p><strong>Bio</strong>: $_bio</p>
-				<p><strong>Quote</strong>: $_quote</p>
-				<p><strong>Degree1</strong>: $_bachelors</p>
-				<p><strong>Degree2</strong>: $_masters</p>
-				<p><strong>Degree3</strong>: $_phd</p>
-				<p><strong>Caption</strong>: $_captionimageheading</p>
-				<p><strong>Extra info</strong>: $_extratext</p>
-				<p><strong>MONDAY1</strong>: $_monstart</p>
-				<p><strong>MONDAY2</strong>: $_monend</p>
-				<p><strong>TUESDAY1</strong>: $_tuestart</p>
-				<p><strong>TUESDAY2</strong>: $_tueend</p>
-				<p><strong>WEDNESDAY1</strong>: $_wedstart</p>
-				<p><strong>WEDNESDAY2</strong>: $_wedend</p>
-				<p><strong>THURSDAY1</strong>: $_thustart</p>
-				<p><strong>THURSDAY2</strong>: $_thuend</p>
-				<p><strong>FRIDAY1</strong>: $_fristart</p>
-				<p><strong>FRIDAY2</strong>: $_friend</p>
-				</div>
+                
+                <?php
+                include 'header.html'
+                ?>
+                
+			<div class='wrapper'>
+                
+                <div class='head'>
+                <div class='infofaculty'>
+                <h1>$degreeTitle $_fname $_lname</h1>
+                </div>
+                </div>
+				<div class='wrapperimg'>
+                <img class='facultypicture' src='uploads/images/$new_name'></div>
+                
+                <img class='sliderdivider' src='../Images/Slider.png'>
+                </div>
+                <br>
+                
+                <div class='backgroundimage'>
+                <h1 class='mainheading'>$_phd $_masters $_bachelors - $_schooling</h1>
+                
+                <h2 class='quote'>$_quote</h2>
+                
+                <div class='intropara'>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                </div>
+                <br>
+      <div class='eventswrapper'>
+              <div class='widget'>
+              
+                  <div class='events'>
+                <h2 class='optionsheading'>
+                  OFFICE HOURS</h2>
+                  <h3> EMAIL</h3>
+                  <p> $_email</p>
+                      
+                  <h3> OFFICE</h3>
+                  <p> Watkins 104</p>
+                  
+                  <h3>MONDAY:</h3>
+                  <p>$_monstart to $_monend</p>
+                  
+                  <h3>TUESDAY:</h3>
+                  <p>$_tuestart to $_tueend</p>
+                  
+                  <h3>WEDNESDAY:</h3>
+                  <p>$_wedstart to $_wedend</p>
+                  
+                  <h3>THURSDAY:</h3>
+                  <p>$_thustart to $_thuend</p>
+                      
+                  <h3>FRIDAY:</h3>
+                  <p>$_fristart to $_friend</p>
+                  </div>
+              </div>
+              
+              <div class='verticalline'>
+              
+              </div>
+              
+              <div class='widget'>
+                  
+                  <div class='events'>
+                    <h2 class='optionsheading'>
+                  CURRENT RESEARCH</h2>
+                  <img src='uploads/images/$new_name2' alt='Research Project'>
+                  
+                  <h3> $_captionimageheading</h3>
+                  <p> $_extratext</p>
+                  </div>
+                  
+              </div>
+          
+          </div>
+          
 			</body>
-	</html>");
+	</html>
+");
 				fwrite($file2,
-"#wrapper{
-	width: 80%;
-	margin: auto;
-	margin-top: 20%;
-	color: white;
-	text-align: center;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+"ul{
+		list-style-type: none;
+		text-align: center;
+		font-family:'Lato';
+            font-weight: 300;
+            display: block;
+            padding-top: 20px;
+            padding-bottom: 20px;
+           
+	}
+html{
+    background-color: #eeeeee;
 }
-body{
-	background-color: purple;
+
+@media only screen and (min-width: 250px) {
+    
+    header{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:250%;
+        color:#333192;
+        padding:20px;
+        width:95%;
+        text-align:center;
+    }
+
+    header img{
+        float:right;
+        vertical-align:top;
+        width:100%;
+    }
+
+    nav{
+        width:100%;
+        padding: 15px;
+        background-color:#333092;
+        text-align: center;
+        line-height:30px;
+        margin-bottom: 5px;
+    }
+    
+    nav a{
+        text-decoration: none;
+        color:#f1f1f1;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        padding-left: 15px;
+        padding-right:15px;
+        display:block;
+        font-size:80%;
+    }
+    
+    br{
+        clear: both;
+    }
+    
+    .banner{
+        width:100%;
+        margin-bottom: 0px;
+    }
+    
+    .mainheading{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:150%;
+        color:#333192;
+        width:100%;
+        text-align: center;
+    }
+    
+
+    
+    footer{
+        width:100%;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 60%;
+        position: sticky;
+        bottom: auto;
+    }
+    
+    footer img{
+        width:100%;
+    }
+    
+    
 }
-.personal_image{
-	height: 50%;
-	width: 50%;
-}");
+
+@media only screen and (min-width: 600px) {
+    header{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:250%;
+        color:#333192;
+        padding:20px;
+        width:95%;
+        text-align: center;
+    }
+
+    header img{
+        float:right;
+        vertical-align:20px;
+        width:30%;
+    }
+
+    nav{
+        width:100%;
+        padding: 15px;
+        background-color:#333092;
+        text-align: center;
+        line-height:40px;
+        margin-bottom: 5px;
+    }
+    
+    nav a{
+        text-decoration: none;
+        color:#f1f1f1;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        padding-left: 15px;
+        padding-right:15px;
+        display:inline;
+    }
+    
+    br{
+        clear: both;
+    }
+    
+    .mainheading{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:200%;
+        color:#333192;
+        width:100%;
+        text-align: center;
+    }
+    
+    footer{
+        width:100%;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 60%;
+        position: sticky;
+        bottom: auto;
+    }
+    
+    footer img{
+        width:100%;
+    }
+
+    .intropara{
+        font-family: 'Slabo 27px';
+        font-size:100%;
+        width:70%;
+        text-align: justify;
+        margin: auto;
+        font-weight: 100;
+        padding-bottom: 60px;
+        margin-bottom: 70px;
+    }
+    
+    .wrapper{
+        width:100%;
+        margin: auto;
+        height:222px;
+        background-color: #333192;
+    }
+    
+    .infofaculty{
+        font-family: Lato;
+        color:whitesmoke;
+        display: inline-block;
+        margin: auto;
+        padding-top: 70px;
+    }
+    
+    .sliderdivider{
+        height:222px;
+        display: inline-block;
+        float:right;
+        margin-left: -120px;
+    }
+    
+    .facultypicture{
+        height:222px;
+        z-index: -1;
+        float: right;
+        margin-left: -120px;
+    }
+    
+    .head{
+        width:30%;
+        padding-left:10px;
+        text-align: center;
+        height:222px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .quote{
+        font-family: 'Slabo 27px';
+        font-style:italic;
+        font-weight: 300;
+        text-align: center;
+        font-size: 130%;
+        color: #333092;
+        width:80%;
+        margin: auto;
+    }
+    
+    .eventswrapper{
+        margin:auto;
+        width:90%;
+        text-align: center;
+        margin-top: -150px;
+    }
+    
+    .widget{
+        display: inline-block;
+        width:100%;
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .events{
+        font-family: Lato;
+        background-color: rgba(254,254,254,0.7);
+        width:100%;
+        display:inline-block;
+        height: 300px;
+        vertical-align: top;
+        text-align: justify;
+        border-radius: 2%;
+        padding-bottom: 40px;
+    }
+    
+    .optionsheading{
+        text-align: center;
+        font-size:100%;
+        font-weight:400;
+        letter-spacing: 2px;
+        color:#333092;
+        font-family: Lato;
+    }
+    
+    .events h3{
+        font-size:80%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: -15px;
+        color:#333092;
+    }
+    
+    .events p{
+        text-align: left justify;
+        font-size:90%;
+        padding-left:20px;
+        padding-right:20px;
+        font-weight: 300;
+        color:#333092;
+        margin-bottom: -5px;
+    }
+    
+    .events img{
+        height:210px;
+        object-fit: cover;
+        width:90%;
+        border-radius: 4px;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .verticalline{
+        height:20px;
+    }
+    
+    .wrapperimg{
+        display: inline-block;
+        float:right;
+    }
+     
+}
+
+@media only screen and (min-width: 768px) {
+
+    header{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:250%;
+        color:#333192;
+        width:95%;
+        text-align: left;
+        vertical-align:top;
+    }
+
+    header img{
+        float:right;
+        max-width:250px;
+        margin-top: -23px;
+    }
+
+    nav{
+        width:100%;
+        background-color:#333092;
+        text-align: justify;
+        line-height:20px;
+    }
+    
+    nav a{
+        text-decoration: none;
+        color:#f1f1f1;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        padding-left: 15px;
+        padding-right:15px;
+        display: inline;
+    }
+    
+    br{
+        clear: both;
+    }
+    
+    .mainheading{
+        font-family: 'Lato';
+        font-weight: bold;
+        font-size:200%;
+        width:80%;
+        text-align: center;
+        color:#313a49;
+        margin: auto;
+        margin-top:90px;
+    }
+    
+    footer{
+        width:100%;
+        font-weight: 100; 
+        font-family: Lato;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 80%;
+        position: sticky;
+        bottom: auto;
+    }
+    
+    footer img{
+        width:100%;
+    }
+    
+    .intropara{
+        font-family: 'Slabo 27px';
+        font-size:100%;
+        width:70%;
+        text-align: justify;
+        margin: auto;
+        font-weight: 100;
+        padding-bottom: 60px;
+    }
+    
+    .wrapper{
+        width:100%;
+        margin: auto;
+        height:222px;
+        background-color: #333192;
+    }
+    
+    .infofaculty{
+        font-family: Lato;
+        color:whitesmoke;
+        display: inline-block;
+        margin: auto;
+        padding-top: 70px;
+    }
+    
+    .sliderdivider{
+        height:222px;
+        display: inline-block;
+        float:right;
+        margin-left: -120px;
+    }
+    
+    .facultypicture{
+        height:222px;
+        z-index: -1;
+        float: right;
+        margin-left: -120px;
+    }
+    
+    .head{
+        width:30%;
+        padding-left: 60px;
+        text-align: center;
+        height:222px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .quote{
+        font-family: 'Slabo 27px';
+        font-style:italic;
+        font-weight: 300;
+        text-align: center;
+        font-size: 130%;
+        color: #333092;
+        width:80%;
+        margin: auto;
+    }
+    
+    .backgroundimage{
+        width:100%;
+        background-image: url('../uploads/images/DottedBG.png');
+        background-position:top;
+        background-size: cover;
+        height:400px;
+        margin-top: -80px;
+    }
+    
+    .wrapperimg{
+        display: inline-block;
+        float:right;
+    }
+      
+    .eventswrapper{
+        margin:auto;
+        width:90%;
+        text-align: center;
+        margin-top: -150px;
+    }
+    
+    .widget{
+        display: inline-block;
+        width:42%;
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .events{
+        font-family: Lato;
+        background-color: rgba(254,254,254,0.7);
+        width:100%;
+        display:inline-block;
+        height: 300px;
+        vertical-align: top;
+        text-align: justify;
+        border-radius: 3%;
+        padding-bottom: 40px;
+        text-align: left; 
+    }
+    
+    .optionsheading{
+        text-align: center;
+        font-size:100%;
+        font-weight:400;
+        letter-spacing: 2px;
+        color:#333092;
+        font-family: Lato;
+    }
+    
+    .events h3{
+        font-size:80%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: -15px;
+        color:#333092;
+    }
+    
+    .events p{
+        text-align: left justify;
+        font-size:90%;
+        padding-left:20px;
+        padding-right:20px;
+        font-weight: 300;
+        color:#333092;
+        margin-bottom: -5px;
+    }
+    
+    .events img{
+        height:150px;
+        object-fit: cover;
+        width:90%;
+        border-radius: 4px;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .verticalline{
+        width:2px;
+        height:350px;
+        display:inline-block;
+        vertical-align:top;
+        background-color: #333092;
+    }
+    
+}
+");
+fwrite($file3,
+"
+     <header><img src='../Images/winonalogo.png'>COMPUTER  SCIENCE</header>
+      <nav>
+          <a href=''>HOME</a>
+          <a href=''>PROSPECTIVE STUDENTS</a>
+          <a href=''>CURRENT STUDENTS</a>
+          <a href=''>FACULTY</a>
+          <a href=''>RESOURCES</a>
+      </nav>
+");
 					print "<p>Your page has been created! The link is below.</p>";
 					print "<a href='faculty/$folder/$_lname.php'>$_fname $_lname's page.</a>";
 					$_status = $db->query("UPDATE subs SET status='FALSE';");
