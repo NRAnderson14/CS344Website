@@ -7,16 +7,20 @@
     <script src="../JS/javascript.js" type="text/javascript"></script>
 -->
     
-    <link rel="stylesheet" href="Style/styleIndex.css"> 
+    <link rel="stylesheet" href="Style/styleFaculty.css"> 
       
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px" rel="stylesheet">
       
   </head>
 
   <body>
-      <?php
-        include 'header.html';
-      ?>
+    <header><img src="winonalogo.png">COMPUTER  SCIENCE</header>
+      <nav>
+          <a href="">PROSPECTIVE STUDENTS</a>
+          <a href="">CURRENT STUDENTS</a>
+          <a href="index.php">FACULTY</a>
+          <a href="">RESOURCES</a>
+      </nav>
     <main>
         
         <!-- add new staff entries here -->
@@ -24,20 +28,20 @@
 
           <li>
             <img src="Images/cichanowski.png" />
-            <a>Gerald Cichanowski</a><br>
-            Ph.D., Michigan State University
+            <div><a>Gerald Cichanowski</a><br>
+            Ph.D., Michigan State University</div>
           </li>
           
           <li>
             <img src="Images/francioni.png" />
-            <a>Joan Francioni</a><br>
-            Ph.D., Florida State University
+            <div><a>Joan Francioni</a><br>
+            Ph.D., Florida State University</div>
           </li>
           
           <li>
             <img src="Images/gegg-harrison.png" />
-            <a>Tim Gegg-Harrison</a><br>
-            Ph.D., Duke University
+            <div><a>Tim Gegg-Harrison</a><br>
+            Ph.D., Duke University</div>
           </li>
         </ul>
         
@@ -50,7 +54,7 @@
       
      <footer>
           <p>Created and Developed by Evan, Nathan, Joe and Uzma</p>
-          <img src="Images/Footer.png" alt="footer">
+          <img src="../Images/Footer.png" alt="footer">
       </footer>
   </body>
 </html>
