@@ -26,7 +26,8 @@
           
           
           <p class="intropara">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. 
+			CS Dept. Mission Statement:<br>
+		  Ensure a high quality and up-to-date curriculum for a diverse group of students; provide a welcoming and supportive learning environment for our students, faculty and staff; and contribute to our community’s technological needs.
           </p>
           
       <br>
@@ -45,7 +46,7 @@
                   </section>
                   
                   <section class="set">
-                    <a href="" class="options"><img src="Images/Faculty.png" alt="Faculty">
+                    <a href="faculty/index.php" class="options"><img src="Images/Faculty.png" alt="Faculty">
                     <h2 class="optionsheading">FACULTY</h2></a>
                   </section>
                       

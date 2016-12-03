@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family:'Lato';
+    font-weight: 300;
+}
+
+#titletext {
+    margin: 0;
+    text-align: center;
+}
+
+#superheader {
+    width: 100%;
+    background-color: #333192;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#pageselector {
+    display: inline;
+    width: auto;
+}
+
+#switcher {
+    display: none;
+    text-align: right;
+    width: auto;
+}
+
+#pagecontent {
+    margin-top: 5%;
+}
+
+.scrolled {
+    box-shadow:  2px 5px 5px #555;
+}
