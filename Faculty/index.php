@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <header><img src="winonalogo.png">COMPUTER  SCIENCE</header>
+  <header><a href='http://www.winona.edu'><img src="Images/winonalogo.png"></a><a href="../index.php">COMPUTER  SCIENCE</a></header>
       <nav>
           <a href="">PROSPECTIVE STUDENTS</a>
           <a href="">CURRENT STUDENTS</a>
@@ -26,6 +26,12 @@
         <!-- add new staff entries here -->
         <ul id="facultyList">
 
+          <li>
+          <a href="Debnath/Debnath.php"><img src="Images/debnath.jpg" /></a>
+            <div><a href="Debnath/Debnath.php">Narayan Debnath</a><br>
+            Ph.D., Jadavpur University</div>
+          </li>
+          
           <li>
             <img src="Images/cichanowski.png" />
             <div><a>Gerald Cichanowski</a><br>

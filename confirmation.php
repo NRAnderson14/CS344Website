@@ -5,8 +5,9 @@
 		<title>prototype php</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="js/index.js" type="text/javascript"></script>
-		<script src="js/jquery.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="Style/Confirmationstyle.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--Where is this?-->
+        <link rel="stylesheet" href="Style/Confirmationstyle.css">
 
 	</head>
 		<body>
@@ -30,14 +31,14 @@
 				if(isset($_POST['lname'])){
 				$_lname = $_POST['lname'];
 				$folder = $_lname;
-				if(!file_exists("faculty/$folder/uploads/images")){
-					mkdir("faculty/$folder/uploads/images", 0777, true);
+				if(!file_exists("Faculty/$folder/uploads/images")){
+					mkdir("Faculty/$folder/uploads/images", 0777, true);
 										
 				}else{
 					print "";
 				}
-				if(!file_exists("faculty/$folder/style")){
-					mkdir("faculty/$folder/style", 0777, true);
+				if(!file_exists("Faculty/$folder/style")){
+					mkdir("Faculty/$folder/style", 0777, true);
 				}else{
 					print "";
 				}
@@ -135,7 +136,7 @@
 						$check = getimagesize($_FILES['fileToUpload']['tmp_name']);
 						if($check !== false){
 							if(!empty($_files)){
-								$path = "faculty/$folder/uploads/images/";
+								$path = "Faculty/$folder/uploads/images/";
 								if  (move_uploaded_file($tmp_name, $path.$new_name)){
 									echo '';
 									}
@@ -171,7 +172,7 @@
 						$check2 = getimagesize($_FILES['extrapic']['tmp_name']);
 						if($check2 !== false){
 							if(!empty($_files2)){
-							$path2 = "faculty/$folder/uploads/images/";
+							$path2 = "Faculty/$folder/uploads/images/";
 								if  (move_uploaded_file($tmp_name2, $path2.$new_name2)){
 									echo ''; 
 									}
@@ -237,9 +238,9 @@
 					fwrite($adminFile,"BIO: $_bio".PHP_EOL);
 									//fwrite($adminFile,"USERNAME: username".PHP_EOL);
 									//fwrite($adminFile,"PASSWORD: password".PHP_EOL);
-				$file = fopen("faculty/$folder/$_lname.php", "w");
-				$file2 = fopen("faculty/$folder/style/style.css", "w");
-				$file3 = fopen("faculty/$folder/header.html","w");
+				$file = fopen("Faculty/$folder/$_lname.php", "w");
+				$file2 = fopen("Faculty/$folder/style/style.css", "w");
+				$file3 = fopen("Faculty/$folder/header.html","w");
 				$file4 = fopen("links.txt","w");
 				fwrite($file4, "<a href='$_lname.php' alt='link'/>");
 				fwrite($file,
@@ -250,8 +251,8 @@
 			<title>prototype php</title>
 			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 			<script src='index.js' type='text/javascript'></script>
-			<script src='jquery.js' type='text/javascript'></script>
-			<link rel='stylesheet' href='../styles/style$_style.css'>
+			<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
+			<link rel='stylesheet' href='../Style/style$_style.css'>
 			<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px' rel='stylesheet'>
 		</head>
 			<body>
@@ -348,7 +349,7 @@ fwrite($file3,
       </nav>
 ");
 					print "<h1 class='mainheading'>YOUR PAGE HAS BEEN CREATED! HERE IS THE LINK:</h1>";
-					print "<br><div class='wrap'><a class='facultyLink' href='faculty/$folder/$_lname.php'>$_fname $_lname's page.</a></div>";
+					print "<br><div class='wrap'><a class='facultyLink' href='Faculty/$folder/$_lname.php'>$_fname $_lname's page.</a></div>";
 					$_status = $db->query("UPDATE subs SET status='FALSE';");
 				}else{
 					print "Sorry, you are not logged in.";

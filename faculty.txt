@@ -1,0 +1,23 @@
+FNAME: Narayan
+LNAME: Debnath
+EMAIL: Ndebnath@winona.edu
+SCHOOL: Jadavpur University
+BIO: Dr. Narayan C. Debnath has been a Full Professor of Computer Science since 1989 at Winona State University, Minnesota, USA.  Dr. Debnath is a recipient of a Doctorate degree in Computer Science and a Doctorate degree in Applied Physics (Electrical Engineering). He served as the President, Vice President, and Conference Coordinator of the International Society for Computers and Their Applications (ISCA).  He served as the Acting Chairman of the Department of Computer Science at Winona State University, and received numerous Honors and Awards.
+QUOTE: Quote placeholder text
+DEGREE1: 
+DEGREE2: 
+DEGREE3: PHD
+CAPTION: CSBrain
+EXTRA: A computer's Brain
+MONDAYSTART: 01:00
+MONDAYEND: 01:00
+TUESDAYSTART: 01:00
+TUESDAYEND: 01:00
+WEDNESDAYSTART: 01:00
+WEDNESDAYEND: 01:00
+THURSDAYSTART: 01:00
+THURSDAYEND: 01:00
+FRIDAYSTART: 01:00
+FRIDAYEND: 01:00
+ROOM: Watkins 108E
+BIO: Dr. Narayan C. Debnath has been a Full Professor of Computer Science since 1989 at Winona State University, Minnesota, USA.  Dr. Debnath is a recipient of a Doctorate degree in Computer Science and a Doctorate degree in Applied Physics (Electrical Engineering). He served as the President, Vice President, and Conference Coordinator of the International Society for Computers and Their Applications (ISCA).  He served as the Acting Chairman of the Department of Computer Science at Winona State University, and received numerous Honors and Awards.

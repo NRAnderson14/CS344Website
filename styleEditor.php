@@ -3,9 +3,9 @@
 <head>
     <title>Edit Style</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="editor.js"></script>
+    <script src="js/editor.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="editstyle.css">
+    <link rel="stylesheet" href="style/editstyle.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                     <!--Reads the faculty folder and gets a list of pages to be edited-->
                     <option></option>
                     <?php
-                        $dir   = "faculty";
+                        $dir   = "Faculty";
                         $pages = array_diff(scandir($dir), array('..', '.', '.DS_Store'));
 
                         foreach($pages as $name) {

@@ -5,14 +5,14 @@
 		<title>prototype index</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="js/index.js" type="text/javascript"></script>
-		<script src="js/jquery.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="style/style(1).css">
 		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px" rel="stylesheet">
 
 	</head>
 		<body>
 			<?php
-				include '../header.html';
+				include 'header.html';
 				$db = new PDO("mysql:dbname=users;host=localhost","root");
 				$_status = $db->query("UPDATE subs SET status='FALSE';");
 			?>

@@ -2,6 +2,8 @@ html{
     background-color: #eeeeee;
 }
 
+
+
 @media only screen and (min-width: 250px) {
     
     header{
@@ -598,4 +600,3 @@ html{
     }
     
 }
-

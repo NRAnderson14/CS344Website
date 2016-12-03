@@ -20,7 +20,7 @@ $(document).ready(function() {
     $("#pageselectoption").submit(function(event) {
         event.preventDefault();
         var name = $("#selectopt").val();
-        var path = "faculty/" + name + "/" + name + ".php";
+        var path = "Faculty/" + name + "/" + name + ".php";
         $.ajax({
             url: path,
             success: function(result) {
