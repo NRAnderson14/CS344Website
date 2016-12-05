@@ -23,9 +23,9 @@ $(document).ready(function() {
         var path = "Faculty/" + name + "/" + name + ".php";
         $.ajax({
             url: path,
-            success: function(result) {
-//                $(result).css("style/style1.css");
+            success: function(result) {;
                 $("#pagecontent").html(result);
+                //Provide correct image links
                 $(".sliderdivider").attr("src", "Faculty/Images/Slider.png");
                 $(".winonalogoimg").attr("src", "Images/winonalogo.png");
                 var addr = $(".facultypicture").attr("src");
@@ -35,9 +35,10 @@ $(document).ready(function() {
                 addr = "Faculty/" + name + "/" + addr;
                 $(".researchimg").attr("src", addr);
                 
-                var csslocation = "Faculty/Style/style2.css";
+                //Provide correct css location
+                var csslocation = "Faculty/Style/style1.css";
                 $.get(csslocation, function(css) {
-                    $('<style type="text/css"></style>')
+                    $('<style id="appliedstyle" type="text/css"></style>')
                         .html(css)
                         .appendTo("head");
                 });
@@ -48,26 +49,21 @@ $(document).ready(function() {
                 alert("Error: " + xhr.status + " " + xhr.statusText);
             }
         });
-        
-        //Fix links to stylesheet and images
-//        $("#pagecontent").css("style/style1.css");
-//        $("img").each(function() {
-//            var image = $(this);
-//            var imgsrc = image.attr("src");
-//            
-//            imgsrc = "Faculty/" + imgsrc;
-//            image.attr("src", imgsrc);
-//        });
     });
     
-    $("#pagecontent").ready(function() {
-        $("#pagecontent").css("style/style1.css");
-        $("img").each(function() {
-            var image = $(this);
-            var imgsrc = image.attr("src");
-            
-            imgsrc = "Faculty/" + imgsrc;
-            image.attr("src", imgsrc);
-        });
+    $("input[name=stylenumber]").change(function() {
+        if (this.value == "1") {
+            $.get("Faculty/Style/style1.css", function(css) {
+                $("#appliedstyle").html(css);
+            });
+        } else if (this.value == "2") {
+            $.get("Faculty/Style/style2.css", function(css) {
+                $("#appliedstyle").html(css);
+            });
+        } else if (this.value == "3") {
+            $.get("Faculty/Style/style3.css", function(css) {
+                $("#appliedstyle").html(css);
+            });
+        }
     });
 });

@@ -32,7 +32,7 @@
         </div>
         <div id="switcher">
             <form>
-                <label><input type="radio" name="stylenumber" value="1">Style 1</label>
+                <label><input type="radio" name="stylenumber" value="1" checked>Style 1</label>
                 <label><input type="radio" name="stylenumber" value="2">Style 2</label>
                 <label><input type="radio" name="stylenumber" value="3">Style 3</label>
                 <input type="submit" value="Save Style">
