@@ -11,9 +11,9 @@
 <body>
     <div id="superheader">
         <h2 id="titletext">Edit Style</h2>
-        <div id="pageselector">
-            <form id="pageselectoption" action="">
-                <select id="selectopt" name="selectopt">
+            <form id="stylechange" action="">
+            <div id="pageselector">
+                <select id="selectopt" name="instrname">
                     <!--Reads the faculty folder and gets a list of pages to be edited-->
                     <option></option>
                     <?php
@@ -27,17 +27,14 @@
                         }
                     ?>
                 </select>
-                <input type="submit" value="Select Page">
-            </form>
-        </div>
-        <div id="switcher">
-            <form>
+            </div>
+            <div id="switcher">
                 <label><input type="radio" name="stylenumber" value="1" checked>Style 1</label>
                 <label><input type="radio" name="stylenumber" value="2">Style 2</label>
                 <label><input type="radio" name="stylenumber" value="3">Style 3</label>
                 <input type="submit" value="Save Style">
+            </div>
             </form>
-        </div>
     </div>
     <div id="pagecontent">
     </div>

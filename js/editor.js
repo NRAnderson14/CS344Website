@@ -17,8 +17,7 @@ $(document).ready(function() {
     /*------------------------------*
      *      ajax Functionality      *
      *------------------------------*/
-    $("#pageselectoption").submit(function(event) {
-        event.preventDefault();
+    $("#selectopt").change(function(event) {
         var name = $("#selectopt").val();
         var path = "Faculty/" + name + "/" + name + ".php";
         $.ajax({
