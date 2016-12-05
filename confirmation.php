@@ -252,7 +252,7 @@
 			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 			<script src='index.js' type='text/javascript'></script>
 			<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
-			<link rel='stylesheet' href='../Style/style$_style.css'>
+			<link rel='stylesheet' class='nativestyle' href='../Style/style$_style.css'>
 			<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Slabo+27px' rel='stylesheet'>
 		</head>
 			<body>
@@ -323,7 +323,7 @@
                   <div class='events'>
                     <h2 class='optionsheading'>
                   CURRENT RESEARCH</h2>
-                  <img src='uploads/images/$new_name2' alt='Research Project'>
+                  <img class='researchimg' src='uploads/images/$new_name2' alt='Research Project'>
                   
                   <h3> $_captionimageheading</h3>
                   <p> $_extratext</p>

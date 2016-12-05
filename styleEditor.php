@@ -18,7 +18,7 @@
                     <option></option>
                     <?php
                         $dir   = "Faculty";
-                        $pages = array_diff(scandir($dir), array('..', '.', '.DS_Store'));
+                        $pages = array_diff(scandir($dir), array('..', '.', '.DS_Store', 'Images', 'index.php', 'Style'));
 
                         foreach($pages as $name) {
                     ?>
