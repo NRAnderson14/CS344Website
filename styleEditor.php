@@ -11,7 +11,7 @@
 <body>
     <div id="superheader">
         <h2 id="titletext">Edit Style</h2>
-            <form id="stylechange" action="">
+            <form id="stylechange" action="styleResponse.php" method="get">
             <div id="pageselector">
                 <select id="selectopt" name="instrname">
                     <!--Reads the faculty folder and gets a list of pages to be edited-->
