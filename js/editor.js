@@ -41,6 +41,8 @@ $(document).ready(function() {
                         .html(css)
                         .appendTo("head");
                 });
+                
+                $("#switcher").css("display", "inline");
             },
             error: function(xhr) {
                 alert("Error: " + xhr.status + " " + xhr.statusText);
