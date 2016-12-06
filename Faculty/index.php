@@ -33,19 +33,19 @@
           </li>
           
           <li>
-            <img src="Images/cichanowski.png" />
+            <img src="Images/cichanowski.jpg" />
             <div><a>Gerald Cichanowski</a><br>
             Ph.D., Michigan State University</div>
           </li>
           
           <li>
-            <img src="Images/francioni.png" />
+            <img src="Images/francioni.jpg" />
             <div><a>Joan Francioni</a><br>
             Ph.D., Florida State University</div>
           </li>
           
           <li>
-            <img src="Images/gegg-harrison.png" />
+            <img src="Images/gegg-harrison.jpg" />
             <div><a>Tim Gegg-Harrison</a><br>
             Ph.D., Duke University</div>
           </li>

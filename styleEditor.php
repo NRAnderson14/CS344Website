@@ -13,7 +13,7 @@
         <h2 id="titletext">Edit Style</h2>
             <form id="stylechange" action="styleResponse.php" method="get">
             <div id="pageselector">
-                <select id="selectopt" name="instrname">
+                <select id="selectopt" name="instrname" required>
                     <!--Reads the faculty folder and gets a list of pages to be edited-->
                     <option></option>
                     <?php
@@ -29,7 +29,7 @@
                 </select>
             </div>
             <div id="switcher">
-                <label><input type="radio" name="stylenumber" value="1" checked>Style 1</label>
+                <label><input type="radio" name="stylenumber" value="1" checked required>Style 1</label>
                 <label><input type="radio" name="stylenumber" value="2">Style 2</label>
                 <label><input type="radio" name="stylenumber" value="3">Style 3</label>
                 <input type="submit" value="Save Style">
